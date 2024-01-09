@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Demonstration</title>
+    <link rel="stylesheet" href="../../common/css/style.css">
+    <style>
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="#" clas>Basic Camera Demonstration</a>
+        <a href="#split-view">Split views</a>
+        <a href="#camera-view-transforms">Camera view rotation</a>
+    </nav>
+    <main class="article-content center">
+        <div class="center" id="split-view">
+            <h1>Split views</h1>
+            <p>This shows a camera rendering the same scene containing two game objects, on the same canvas, where each camera view takes up half of the canvas. The top camera has a smaller field of view</p>
+            <canvas id="canvas1" class="center"></canvas>
+        </div>
+
+        <div class="center" id="camera-view-transforms">
+            <h1>Camera view transforms</h1>
+            <p>The camera view can be rotated and translated, for example, to produce dramatic effects. This can be done by rotating the gameObject the camera is attached to.</p>
+            <canvas id="canvas2" class="center"></canvas>
+        </div>
+        
+    </main>
+    
+    <script src="splitView.js" type="module"></script>
+    <script src="viewTransform.js" type = "module"></script>
+</body>
+</html>
