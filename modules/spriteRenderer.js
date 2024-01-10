@@ -15,6 +15,8 @@ export default class SpriteRenderer extends Artist {
 
     draw(ctx, x, y, scaleX, scaleY) {
         ctx.drawImage(this.sprite, this.cropX, this.cropY, this.cropWidth, this.cropHeight, x-this.width*scaleX/2, y-this.height*scaleY/2, this.width * scaleX, this.height*scaleY)
+        ctx.fillStyle = "blue"
+        ctx.fillRect(x-2.5, y-2.5, 5, 5)
     }
 
     setCropDimensions(cropWidth, cropHeight) {

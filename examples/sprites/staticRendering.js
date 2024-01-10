@@ -25,13 +25,22 @@ window.addEventListener("load", function() {
     
     let deltaTime = 0;
     let lastTime = 0;
+    let flipTimer = 0;
+    let timer = 0
 
     function animate(timestamp) {
+        timer += deltaTime
         deltaTime = timestamp - lastTime
         lastTime = timestamp
 
-        wheel.position.x = Math.cos(3* 0.001 * deltaTime)
-        wheel.position.y = Math.sin(3* 0.001 * deltaTime)
+        if (flipTimer > 1000) {
+            cameraComponent.flipY += 0
+            cameraComponent.flipY = cameraComponent.flipY % 2
+            flipTimer = 0
+        } else {
+            flipTimer += deltaTime
+        }
+        
         wheel.rotate(-6 * 0.001 * deltaTime)
         sprite.translate(-2 * deltaTime * 0.001, 0, 0)
         sprite.rotate(0*-1 * 0.001 * deltaTime)
