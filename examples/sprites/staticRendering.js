@@ -14,6 +14,9 @@ window.addEventListener("load", function() {
     spriteComponent.sprite = sampleSprite
     spriteComponent.setCropDimensions(300, 195)
     spriteComponent.flipX = 1
+    sprite.translate(0,2,0)
+    cameraComponent.flipX = 0
+    cameraComponent.flipY = 0
 
     const wheel = new GameObject()
     const wheelSpriteComponent = new SpriteRenderer(wheel)

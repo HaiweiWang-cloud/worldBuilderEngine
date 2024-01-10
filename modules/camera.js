@@ -15,6 +15,9 @@ export default class Camera extends Component {
         this.viewY = 0
         this.size = 5 // set the height of the camera to 5 length units by default
 
+        this.flipX = 0
+        this.flipY = 0
+
         this.calculateDerived()
     }
 
@@ -35,14 +38,14 @@ export default class Camera extends Component {
     renderArtist(artist) {
         let rotCameraPosition = this.gameObject.position.rotateZ(this.gameObject.rotation)
         let rotObjectPosition = artist.gameObject.position.rotateZ(this.gameObject.rotation)
-        let x = (rotObjectPosition.x + this.width/2 - rotCameraPosition.x) * this.lengthToPxFactor + this.offsetX
-        let y = (rotObjectPosition.y + this.height/2 - rotCameraPosition.y) * this.lengthToPxFactor + this.offsetY
+        let x = (rotObjectPosition.x * (1 - this.flipX * 2)+ this.width/2 - rotCameraPosition.x) * this.lengthToPxFactor + this.offsetX
+        let y = (rotObjectPosition.y * (1 - this.flipY * 2) + this.height/2 - rotCameraPosition.y) * this.lengthToPxFactor + this.offsetY
         
         this.targetCtx.save()
         
         this.targetCtx.translate(x, y)
         this.targetCtx.rotate(artist.gameObject.rotation-this.gameObject.rotation)
-        this.targetCtx.scale(1 - artist.flipX * 2, 1 - artist.flipY* 2)
+        this.targetCtx.scale((1 - artist.flipX * 2) * (1- this.flipX * 2), (1 - artist.flipY* 2) * (1 - this.flipY * 2))
         this.targetCtx.translate(-x, -y)
         
         artist.draw(this.targetCtx, x, y, artist.gameObject.scale.x * this.lengthToPxFactor, artist.gameObject.scale.y * this.lengthToPxFactor)
