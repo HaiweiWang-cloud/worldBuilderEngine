@@ -8,8 +8,8 @@ export default class Artist extends Component{
         this.width = 1
         this.height = 1
 
-        this.flipX = false
-        this.flipY = false
+        this.flipX = 0
+        this.flipY = 0
     }
 
     draw(ctx, x, y, scaleX, scaleY) {
@@ -20,5 +20,4 @@ export default class Artist extends Component{
         ctx.fillStyle = "blue"
         ctx.fillRect(x-2.5, y-2.5, 5, 5)
     }
-
 }
