@@ -20,13 +20,13 @@
     <main class="article-content center">
         <div class="center" id="split-view">
             <h1>Split views</h1>
-            <p>This shows a camera rendering the same scene containing two game objects, on the same canvas, where each camera view takes up half of the canvas. The top camera has a smaller field of view</p>
+            <p>This shows a camera rendering the same scene containing two game objects, on the same canvas, where each camera view takes up half of the canvas. The top camera has a narrower field of view</p>
             <canvas id="canvas1" class="center"></canvas>
         </div>
 
         <div class="center" id="camera-view-transforms">
             <h1>Camera view transforms</h1>
-            <p>The camera view can be rotated and translated, for example, to produce dramatic effects. This can be done by rotating the gameObject the camera is attached to.</p>
+            <p>The camera view can be rotated and translated, for example, to produce dramatic effects. This can be done by transforming the gameObject the camera is attached to. Fliping of the camera view are possible by toggling the flip variables in the camera components, but since these are improper transforms, they can be quite jarring for the player and should be used sparingly.</p>
             <canvas id="canvas2" class="center"></canvas>
         </div>
         

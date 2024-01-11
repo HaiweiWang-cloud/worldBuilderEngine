@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
         deltaTime = timestamp - lastTime
         lastTime = timestamp
 
-        if (flipTimer > 1000) {
+        if (flipTimer > 2000) {
             cameraComponent.flipY += 0
             cameraComponent.flipY = cameraComponent.flipY % 2
             flipTimer = 0
