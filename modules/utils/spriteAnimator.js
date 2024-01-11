@@ -20,7 +20,7 @@ export default class SpriteAnimator {
     }
 
     changeFrameY(newFrameY) {
-        this.sprite.cropY = this.frameY * this.spriteHeight
+        this.sprite.cropY = newFrameY * this.spriteHeight
     }
 
     update(deltaTime) {

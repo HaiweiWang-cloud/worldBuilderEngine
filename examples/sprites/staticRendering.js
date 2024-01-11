@@ -22,6 +22,7 @@ window.addEventListener("load", function() {
     const wheelSpriteComponent = new SpriteRenderer(wheel)
     wheelSpriteComponent.sprite = wheelSampleSprite
     wheelSpriteComponent.setCropDimensions(213, 212)
+    wheel.translate(0,1,0)
     
     let deltaTime = 0;
     let lastTime = 0;
@@ -34,7 +35,7 @@ window.addEventListener("load", function() {
         lastTime = timestamp
 
         if (flipTimer > 2000) {
-            cameraComponent.flipY += 0
+            cameraComponent.flipY += 1
             cameraComponent.flipY = cameraComponent.flipY % 2
             flipTimer = 0
         } else {
