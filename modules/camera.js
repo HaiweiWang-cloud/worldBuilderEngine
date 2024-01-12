@@ -44,11 +44,10 @@ export default class Camera extends Component {
         this.targetCtx.save()
         
         this.targetCtx.translate(x, y)
-        this.targetCtx.rotate(artist.gameObject.rotation-this.gameObject.rotation)
-        
+        this.targetCtx.rotate((artist.gameObject.rotation-this.gameObject.rotation) * (1- 2 * artist.flipX) * (1 - 2 * artist.flipY))
+        this.targetCtx.scale((1- 2 * artist.flipX), (1- 2 * artist.flipY))
         this.targetCtx.translate(-x, -y)
 
-        
         artist.draw(this.targetCtx, x, y, artist.gameObject.scale.x * this.lengthToPxFactor, artist.gameObject.scale.y * this.lengthToPxFactor)
         
         this.targetCtx.restore()

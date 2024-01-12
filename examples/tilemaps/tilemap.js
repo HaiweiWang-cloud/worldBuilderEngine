@@ -85,7 +85,6 @@ window.addEventListener("load", function() {
             
         }
 
-        camera.rotate(0.5 * 0.001 * deltaTime)
         if (moving) playerAnimator.update(deltaTime)
 
         canvas1.getContext("2d").clearRect(0,0,canvas1.width,canvas1.height)
