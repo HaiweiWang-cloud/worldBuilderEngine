@@ -1,5 +1,4 @@
 import Component from "./component.js"
-import Vector3D from "./utils/vector3D.js"
 
 export default class Artist extends Component{
     constructor(gameObject) {
