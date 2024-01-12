@@ -14,7 +14,6 @@ window.addEventListener("load", function() {
     const camera = new GameObject()
     const cameraComponent = new Camera(canvas1, camera)
     camera.translate(2.5, 2.5, 0)
-    
 
     const player = new GameObject()
     const playerSprite = new SpriteRenderer(player)
@@ -26,7 +25,7 @@ window.addEventListener("load", function() {
     const terrain = new GameObject()
     const terrainTileMap = new Grid(terrain, 1, 5, 5)
     const terrainSprites = new TileSpriteMap(tileAtlas, 64, 64, 5, 1)
-    
+
     const featuresTileMap = new Grid(terrain, 1, 5, 5)
 
     terrainTileMap.map = 
@@ -41,9 +40,9 @@ window.addEventListener("load", function() {
     featuresTileMap.map = 
     [
         -1, -1, -1, -1, -1,
+        -1, -1, -1, -1, 4,
         -1, -1, -1, -1, -1,
-        -1, -1, -1, -1, -1,
-        -1, -1, -1, 3, -1,
+        -1, 4, -1, 3, -1,
         -1, -1, -1, -1, -1,
     ]
 
@@ -66,6 +65,7 @@ window.addEventListener("load", function() {
         let left = input.heldKeys.has("a")
         let right = input.heldKeys.has("d")
         let moving = up || down || left || right
+
         if (up) {
             player.translate(0, -verticalSpeed  * deltaTime *0.001, 0)
         } 
@@ -85,6 +85,7 @@ window.addEventListener("load", function() {
             
         }
 
+        camera.rotate(0.5 * 0.001 * deltaTime)
         if (moving) playerAnimator.update(deltaTime)
 
         canvas1.getContext("2d").clearRect(0,0,canvas1.width,canvas1.height)
