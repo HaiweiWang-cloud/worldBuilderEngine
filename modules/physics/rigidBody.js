@@ -8,6 +8,7 @@ export default class RigidBody extends Artist {
         this.velocity = new Vector3D(0,0,0)
         this.initialPosition = new Vector3D(this.gameObject.position.x, this.gameObject.position.y, this.gameObject.position.z)
         
+        this.damping = 0
         this.gravity = 1
         this.forces = []
         this.constraints = []
@@ -20,7 +21,7 @@ export default class RigidBody extends Artist {
         })
 
         this.velocity.y += this.gravity * 9.81* deltaTime * 0.001
-        
+        this.velocity = this.velocity.subtract(this.velocity.scale(this.damping * deltaTime * 0.001))
         /* Store initial position for later computation after constraints */
         this.initialPosition.x = this.gameObject.position.x
         this.initialPosition.y = this.gameObject.position.y

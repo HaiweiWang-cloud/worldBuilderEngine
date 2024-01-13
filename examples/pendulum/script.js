@@ -8,7 +8,7 @@ window.addEventListener("load", function() {
     canvas1.width = 400
     canvas1.height = 400
 
-    const substeps = 20
+    const substeps = 1
     const length = 3
     const length2 = 3
     const initialAngle1 = Math.PI/2 - 0

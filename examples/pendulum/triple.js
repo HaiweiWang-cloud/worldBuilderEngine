@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
     canvas2.width = 400
     canvas2.height = 400
 
-    const substeps = 300
+    const substeps = 200
 
     const camera = new GameObject()
     const cameraComponent = new Camera(canvas2, camera)
@@ -23,9 +23,9 @@ window.addEventListener("load", function() {
     const length = 2
     const length2 = 2
     const length3 = 1
-    const initialAngle1 = Math.PI/2 - 0.5
-    const initialAngle2 = Math.PI/2 - 0
-    const initialAngle3 = Math.PI/2 - 0
+    const initialAngle1 = Math.PI/2 - 1.5
+    const initialAngle2 = Math.PI/2 - 1.5
+    const initialAngle3 = Math.PI/2 - 1.5
 
     const mass1 = new GameObject()
     const mass1Body = new RigidBody(mass1)
@@ -37,7 +37,7 @@ window.addEventListener("load", function() {
     mass3Body.mass = 0.5
     mass2Body.mass = 1
     mass1Body.mass = 1.5
-
+    mass1Body.damping = 5
 
     const constraint = new FixedDistanceConstraint(attachmentBody, mass1Body, length)
     const constraint2 = new FixedDistanceConstraint(mass1Body, mass2Body, length2)
