@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Demo</title>
+    <link rel="stylesheet" href="../../common/css/style.css">
+    <style>
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="#" clas>Pendulums using fixed distance constraints</a>
+        
+    </nav>
+
+    <main class="article-content center">
+        <div class="center" id="render-tiles">
+            <h1>Double pendulum</h1>
+            <p></p>
+            <canvas id="canvas1" class="center"></canvas>
+        </div>
+
+        <div class="center" id="triple-pendulum">
+            <h1>Triple pendulum</h1>
+            <p></p>
+            <canvas id="canvas2" class="center"></canvas>
+        </div>        
+    </main>
+
+    <script src="script.js" type="module"></script>
+    <script src="triple.js" type="module"></script>
+</body>
+</html>
